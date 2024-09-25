@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+header{width:100%;
+  --background-color:yellow;
+  }
+navi { width: 15%;
+height: 70%; 
+float: left;
+--background: red; 
+}
+section { 
+width: 70%; 
+height: 70%; 
+float: left; 
+--background: olivedrab; 
+}
+aside { 
+width: 15%;
+height: 70%; 
+float: left; 
+--background: orange; 
+}
+body{
+--background-color:mistyrose;
+margin:0px;
+padding:0px;
+
+}
+td{
+background-color:yellow;
+color:#000080;
+font-weight:bold;
+margin:0px;
+padding:0px;
+
+}
+
+table{
+margin:0px;
+padding:0px;
+
+}
+
+.idcolor{
+	color : #FF6600;
+}
+
+#name{
+	color : red;
+	font-size : 30px;
+}
+
+input[type=password] {
+	background-color : blue;
+}
+a:link{
+	color : green;
+}
+a:visited{
+	color : yellow;
+}
+.main{
+	width : 600px;
+	height : 300px;
+	text-align:center;
+	border : 1px solid red;
+	
+}
