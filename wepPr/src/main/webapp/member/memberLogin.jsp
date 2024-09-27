@@ -5,6 +5,29 @@
  <HEAD>
   <TITLE> memberJoin.html </TITLE>
   <style>
+  input[type=text]:focus, input[type=password]:focus{
+  	font-size : 120%;
+  
+  }
+  header{
+  	text-align : center;
+  }
+  
+  footer{
+  	text-align : center;
+  }
+  
+  table{
+  	margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  
+  
+  
+  
+  
+  
   
   
   </style>
