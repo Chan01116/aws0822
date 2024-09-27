@@ -11,6 +11,7 @@
   }
   header{
   	text-align : center;
+  	font-size : 32px;
   }
   
   footer{
@@ -21,7 +22,10 @@
   	margin: 0 auto;
     border-collapse: collapse;
   }
-  
+  navi {
+  	background-image : url("../images/pexels-pixabay-210012.jpg");
+
+  }
   
   
   
@@ -40,9 +44,9 @@
 
  <BODY>
 
-<header>로그인 페이지</header> 
+<header>User Login</header> 
 
- <navi></navi>
+ <div>
  <section>
 	<article>
 	<form name="frm" action = ".test0920_result.html" method="post">
@@ -67,6 +71,6 @@
  <aside></aside>
 <footer>made by HC</footer> 
 
-  
+  </div>
  </BODY>
 </HTML>
