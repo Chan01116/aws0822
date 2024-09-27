@@ -34,16 +34,16 @@
 		
 		<tr><th>성별</th>
 		<td>
-		<input type="radio" name="memberGender" value = "남성">남성
-		<input type="radio" name="memberGender" value = "여성" checked>여성
+		<input type="radio" name="memberGender">남성
+		<input type="radio" name="memberGender">여성
 		</td></tr>
 		
 		<tr><th>생년월일</th><td><input type="number" name="memberBirth" style = "width:100px" maxlength="8">예)20240920</td></tr>
 		
 		<tr><th>취미</th><td>
-			<input type="checkbox" name="memberHobby" value="야구">야구
-			<input type="checkbox" name="memberHobby" value="농구">농구
-			<input type="checkbox" name="memberHobby" value="축구">축구	
+			<input type="checkbox" name="memberHobby" id = "check1"><label for="check1">야구</label>
+			<input type="checkbox" name="memberHobby" id = "check2"><label for="check2">농구</label>
+			<input type="checkbox" name="memberHobby" id = "check3"><label for="check3">축구</label>	
 		</td></tr>
 		
 		

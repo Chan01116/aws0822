@@ -31,6 +31,13 @@ thead{
 tfoot{
 	border-bottom : 1px solid gray;
 }
+tbody tr:nth-child(even){
+	background : aliceblue;
+}
+
+tbody tr:hover{
+	background : pink;
+}
 
 
 </style>
