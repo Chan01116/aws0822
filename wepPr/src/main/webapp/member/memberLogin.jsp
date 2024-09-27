@@ -15,22 +15,32 @@
   }
   
   footer{
+  	position : absolute;
+  	top : 98%;
   	text-align : center;
+  	left: 50%;
+  	transform: translateX(-50%);
+  	color: white;
   }
   
   table{
   	margin: 0 auto;
     border-collapse: collapse;
+    background-color : rgba(255,255,255,0.4);
+    position : absolute;
+    top: 20%;
+    left: 70%;
   }
-  navi {
+  
+  
+  div {
   	background-image : url("../images/pexels-pixabay-210012.jpg");
-
+	margin: 0; /* 기본 여백 제거 */
+    height: 100vh; /* 전체 높이를 화면에 맞게 설정 */
+    background-size: cover; /* 배경 이미지를 요소 크기에 맞게 조절 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
   }
-  
-  
-  
-  
-  
   
   
   
