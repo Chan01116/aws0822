@@ -16,11 +16,11 @@
 // 라고 출력하는 구문을 만들고 영어점수 변수명은 eng이다.
 // 구문을 완성하시오
 
-let eng;
+/* let eng;
 
 /* eng = 89; */
 
-eng = prompt("점수를 입력하세요","");   // prompt : 입력받는 함수
+/* eng = prompt("점수를 입력하세요","");   // prompt : 입력받는 함수
 
 if(eng >= 90){
 	document.write("A");
@@ -41,7 +41,7 @@ else if(eng >= 60){
 else{
 	document.write("F");
 	document.write("<br>");
-}
+} */
 
 
 // 조건식 2번째 switch문
@@ -60,7 +60,7 @@ case 값 :
 default : 
 } */
 
-let math;
+/* let math;
 math = prompt("수학점수를 입력해주세요","");
 switch (math){
 
@@ -80,13 +80,13 @@ default :
 	document.write("모름");
 
 }
-document.write("<br>");
+document.write("<br>"); */
 
 // 입력한 요일에 따라서 정상영업인지 아닌지 츨력하세요
 
 // 월~금 : 정상영업   토~일 : 휴무 
 
-let day;  // 통합변수 day선언
+/* let day;  // 통합변수 day선언
 day = prompt("요일을 입력하세요","");
 
 switch (day){
@@ -104,17 +104,171 @@ case "일":
 default : 
 	document.write("모름");
 }
+document.write("<br>"); */
+
+
+// for문 학습하기
+
+// 형식
+//for(초기식;조건식;증가식){
+	
+//}
+
+
+
+
+
+// 1에서 10까지의 수를 출력하세요
+
+
+/* for(let i=0; i <=10; i++){
+	document.write(i);
+	document.write("<br>");
+} */
+
+// 1에서 11까지의 합을 구해서 결과를 출력해주세요
+
+let total;
+
+total = 0;
+
+for(let i=1; i <= 11; i++){
+	total += i; 
+	}
+document.write(total);
+document.write("<br>");
+
+// while 이용해서 반복문 만들기
+
+// 형식
+
+// 초기식
+// while(조건식){
+//  증가식;
+//   }
+
+
+// 1에서 11까지 의 합을 구해서 결과를 출력해주세요
+
+/* let total2 = 0;
+
+let i = 1;
+
+while(i<=11){
+	
+	total2 += i;
+	
+	i++;
+}
+document.write("while문을 이용한 합 : "+total2);
+document.write("<br>"); */
+
+
+
+// 1에서 100까지의 수중에 홀수의 합을 구하시오
+
+let hol = 0;
+
+for(let i = 1; i<=100; i++){
+	if(i%2 == 1){
+		hol = hol + i;
+	}
+}
+
+document.write(hol);
 document.write("<br>");
 
 
+let hol2 = 0;
+let i = 1;
+while(i<=100){
+	if(i%2==1){
+		hol2 += i;
+	}
+	i++;
+}
+
+document.write(hol2);
+document.write("<br>");
+
+
+// 반복문 3번쨰 do while문
+// 형식
+
+// 초기식
+// do{
+//	증가식;
+//}while(조건식);
+
+// 일단 한번은 수행하고 조건식을 수행하세요라는 뜻
+// 1에서 10까지의 수를 출력하세요
+
+let k = 0;
+
+do{
+	document.write("순서번호입니다."+k);
+	document.write("<br>");
+	k++;
+}while(k < -1);
+
+
+
+// 이중for문 사용하기 : for문안에 for문이 존재한다
+// 형식
+// for(초기식;조건식;증감식;){
+//	for(초기식;조건식;증감식;){
+	
+//}
+//  }
+
+
+
+// 별그리기
+
+for(let i = 0; i<5; i++){
+	for(let j = 0; j < i+1; j++){
+		document.write("☆");
+	}
+	document.write("<br>");
+}
 
 
 
 
+/* i값   j값
+   0      0
+   1     0,1   두번돈다
+   2    0,1,2  세번돈다
+   .      .
+   .      . */
 
 
+// 정위치에 있는 별을 찍어보기
 
-
+/* for(let i = 0; i < 5; i++){
+	for(let k = 4; k>i; k--){
+		document.write("&nbsp;");
+	}
+	for(let k = 0; j<5; j=j+2){
+		document.write("☆");
+	}
+	document.write("<br>");
+} */
+  
+   
+for(let i =1; i<=5; i++){
+	for(let j=5-i; j>0; j--){
+		document.write("★");
+	}
+	for(let j=1; j<=i*2-1; j++){
+		document.write("☆");
+	}
+	document.write("<br>");
+}
+   
+   
+   
+   
 
 
 
