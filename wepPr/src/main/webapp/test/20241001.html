@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if문, for문</title>
+</head>
+<body>
+
+
+<script>
+// 영어점수가 90점 이상이면 A
+// 영어점수가 80점 이상이면 B
+// 영어점수가 70점 이상이면 C
+// 영어점수가 60점 이상이면 D
+// 영어점수가 60점 미만이면 F
+// 라고 출력하는 구문을 만들고 영어점수 변수명은 eng이다.
+// 구문을 완성하시오
+
+let eng;
+
+/* eng = 89; */
+
+eng = prompt("점수를 입력하세요","");   // prompt : 입력받는 함수
+
+if(eng >= 90){
+	document.write("A");
+	document.write("<br>");
+}
+else if(eng >= 80){
+	document.write("B");
+	document.write("<br>");
+}
+else if(eng >= 70){
+	document.write("C");
+	document.write("<br>");
+}
+else if(eng >= 60){
+	document.write("D");
+	document.write("<br>");
+}
+else{
+	document.write("F");
+	document.write("<br>");
+}
+
+
+// 조건식 2번째 switch문
+
+// 수학점수 math가 90점이면 높으면 우수 80점이면 보통 70점이면 미흡 60점이면 저조 나머지는 모름 이라고 swith case 문을 통해서 작성하세요
+
+
+/* switch(){
+
+case 값 :  
+	
+case 값 : 
+
+case 값 : 
+	
+default : 
+} */
+
+let math;
+math = prompt("수학점수를 입력해주세요","");
+switch (math){
+
+case "90" :
+	document.write("우수");
+	break;
+case "80" :
+	document.write("보통");
+	break;
+case "70" :
+	document.write("미흡");
+	break;
+case "60" :
+	document.write("저조");
+	break;
+default :
+	document.write("모름");
+
+}
+document.write("<br>");
+
+// 입력한 요일에 따라서 정상영업인지 아닌지 츨력하세요
+
+// 월~금 : 정상영업   토~일 : 휴무 
+
+let day;  // 통합변수 day선언
+day = prompt("요일을 입력하세요","");
+
+switch (day){
+case "월": 
+case "화": 
+case "수": 
+case "목": 
+case "금": 
+	document.write("정상영업");
+	break;
+case "토": 
+case "일": 
+	document.write("휴무");
+	break;
+default : 
+	document.write("모름");
+}
+document.write("<br>");
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
