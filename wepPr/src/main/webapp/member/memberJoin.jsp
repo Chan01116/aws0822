@@ -16,30 +16,36 @@
 	 
 	 if (fm.memberId.value == ""){
 		 alert("아이디를 입력해주세요");
+		 fm.memberId.focus();
 		 return;
 	 }else if (fm.memberPwd.value == ""){
 		 alert("비밀번호를 입력해주세요");
+		 fm.memberPwd.focus();
 		 return;
 	 }else if (fm.memberPwd2.value == ""){
-		 alert("비밀번호2를 입력해주세요");
+		 alert("비밀번호확인을 입력해주세요");
+		 fm.memberPwd2.focus();
 		 return;
 	 }else if (fm.memberPwd.value !== fm.memberPwd2.value){
 		 alert("비밀번호가 일치하지 않습니다.");
 		 return;
 	 }else if (fm.memberName.value == ""){
 		 alert("이름을 입력해주세요");
+		 fm.memberName.focus();
 		 return;
 	 }else if (fm.memberEmail.value == ""){
 		 alert("이메일을 입력해주세요");
+		 fm.memberEmail.focus();
 		 return;
 	 }else if (fm.memberPhone.value == ""){
 		 alert("전화번호를 입력해주세요");
+		 fm.memberPhone.focus();
 		 return;
 	 }else if (fm.memberBirth.value == ""){
 		 alert("생년월일을 입력해주세요");
+		 fm.memberBirth.focus();
 		 return;
 	 }
-	 
 	 
 	 
 	 return;  // 리턴값을 안쓰면 그냥 멈춤 종료
