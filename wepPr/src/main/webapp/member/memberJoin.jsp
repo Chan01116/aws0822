@@ -6,7 +6,48 @@
   <TITLE> memberJoin </TITLE> 
   
   <link href = "../css/style.css" type = "text/css" rel = "stylesheet">
+ <script type="text/javascript">
  
+ // 버튼을 눌렀을때 check 함수 작동
+ function check(){
+	 
+	 
+	 var fm = document.frm;
+	 
+	 if (fm.memberId.value == ""){
+		 alert("아이디를 입력해주세요");
+		 return;
+	 }else if (fm.memberPwd.value == ""){
+		 alert("비밀번호를 입력해주세요");
+		 return;
+	 }else if (fm.memberPwd2.value == ""){
+		 alert("비밀번호2를 입력해주세요");
+		 return;
+	 }else if (fm.memberPwd.value !== fm.memberPwd2.value){
+		 alert("비밀번호가 일치하지 않습니다.");
+		 return;
+	 }else if (fm.memberName.value == ""){
+		 alert("이름을 입력해주세요");
+		 return;
+	 }else if (fm.memberEmail.value == ""){
+		 alert("이메일을 입력해주세요");
+		 return;
+	 }else if (fm.memberPhone.value == ""){
+		 alert("전화번호를 입력해주세요");
+		 return;
+	 }else if (fm.memberBirth.value == ""){
+		 alert("생년월일을 입력해주세요");
+		 return;
+	 }
+	 
+	 
+	 
+	 return;  // 리턴값을 안쓰면 그냥 멈춤 종료
+ }
+ 
+ 
+ 
+ </script>
  </HEAD>
  <BODY>
  <header><a href = "./memberJoin.jsp">회원가입 페이지></a></header>
@@ -49,8 +90,8 @@
 		
 		<tr>
 			<td colspan = 2 style = "text-align:center">
-			<button type="button" onclick = "javascript:alert('저장하시겠습니까?');">
-			<img src = "https://t1.daumcdn.net/daumtop_deco/images/pctop/2023/logo_daum.png" width="50px" height="40px">
+			<button type="button" onclick = "check();">
+			저장하기
 			</button>
 			
 			

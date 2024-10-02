@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 연습하기</title>
+</head>
+<body>
+<script type="text/javascript">
+/* function oddHap(){
+	let total6 = 0;
+
+	   for(let i = 1; i <=10; i++){
+	   	if(i%2==1){ 
+	   		total6 = total6+i;
+	   	}	
+	   }   
+	   return total6;
+}
+
+let value = oddHap();
+document.write("합은?"+value); */
+
+// 구구단 만들기
+
+/* for(let i = 2; i<=9; i++){
+	for(let j = 1; j<=9; j++){
+	 	let k = 0;
+		k=i*j;
+	document.write(i+"X"+j+"="+k+"&nbsp"+"&nbsp");
+	document.write("<br>");
+	}
+	document.write("<br>");
+	
+} */
+
+
+function gugudan(a){
+	
+/* 	for(let i = 2; i<=9; i++){
+		if(a==i){
+		for(let j = 1; j<=9; j++){
+		 	let k = 0;
+			k=i*j;
+		document.write(i+"X"+j+"="+k+"&nbsp"+"&nbsp");
+		document.write("<br>");
+		}
+		document.write("<br>");	
+	}
+} */
+
+for(let i = 1; i <=9; i++){
+	let k = 0;
+	k = a*i;
+	document.write(a+"X"+i+"="+k+"&nbsp"+"&nbsp");
+	document.write("<br>");
+}
+
+
+
+}
+let num = prompt("원하는 단을 입력하세요","");
+
+gugudan(num);
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
