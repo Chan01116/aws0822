@@ -38,10 +38,25 @@
     out.println("memberBirth값은?"+memberBirth);
     out.println("<br>");
     
-    String[] memberHobby = request.getParameterValues("memberHobby");
-    for(int i = 0; i < memberHobby.length; i++){
-    	out.println("memberHobby값은?"+memberHobby[i]);
-    }
+    
+    //String[] memberHobby = request.getParameterValues("memberHobby");
+    //for(int i = 0; i < memberHobby.length; i++){
+    //	out.println("memberHobby값은?"+memberHobby[i]);
+    //}
+    
+    
+    
+    // 1. jsp 프로그래밍 (날코딩 낱코딩방법부터 -> 함수화 -> 객체화 방식) 
+    // 2. java/jsp 프로그래밍(model1, model2 MVC방식으로 진화되는 방법)
+    // 3. spring 프레임워크로 프로그래밍 하는 방법
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     %>    

@@ -9,11 +9,11 @@
  <script type="text/javascript">
  
  // 버튼을 눌렀을때 check 함수 작동
+  
  function check(){
-	 
-	 
-	 var fm = document.frm;
-	 
+	var fm = document.frm; // frm : form객체의 이름
+	const email = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+	
 	 if (fm.memberId.value == ""){
 		 alert("아이디를 입력해주세요");
 		 fm.memberId.focus();
@@ -27,6 +27,8 @@
 		 fm.memberPwd2.focus();
 		 return;
 	 }else if (fm.memberPwd.value !== fm.memberPwd2.value){
+		 fm.memberPwd2.value="";
+		 fm.memberPwd2.focus();
 		 alert("비밀번호가 일치하지 않습니다.");
 		 return;
 	 }else if (fm.memberName.value == ""){
@@ -37,6 +39,11 @@
 		 alert("이메일을 입력해주세요");
 		 fm.memberEmail.focus();
 		 return;
+	 }else if(email.test(fm.memberEmail.value)==false){
+		 alert("이메일형식이 올바르지 않습니다.");
+		 fm.memberEmail.value="";
+		 fm.memberEmail.focus();
+		 return;
 	 }else if (fm.memberPhone.value == ""){
 		 alert("전화번호를 입력해주세요");
 		 fm.memberPhone.focus();
@@ -45,14 +52,42 @@
 		 alert("생년월일을 입력해주세요");
 		 fm.memberBirth.focus();
 		 return;
+	 }else if(hobbyCheck() == false) {
+		 alert("취미를 1개이상 선택해주세요");
+		 return;
 	 }
+	 //alert("이동할 정보등록할 차례입니다.");
 	 
-	 
+	 var ans = confirm("저장하시겠습니까?");
+	 if(ans == true){
+		 fm.action = "<%=request.getContextPath()%>/member/memberJoinAction.jsp";  // html 홈태그 기능을 자바스크립트로 제어
+		 fm.method = "post";
+		 fm.submit();
+	 }
 	 return;  // 리턴값을 안쓰면 그냥 멈춤 종료
  }
  
+ function hobbyCheck(){
+	 
+	 var arr = document.frm.memberHobby;  // 문서객체안에 폼객체 안에 input객체 선언
+	 var flag = false;           // 체크유무 초기값 false선언
+	 
+	 for(var i = 0; i<arr.length; i++){    // 선택한 여러값을 반복해서 출력
+		 if(arr[i].checked == true){       // 하나라도 선택했다면 true값 리턴
+			 flag = true;
+			 break;
+		 }
+		 
+	 }
+	 return flag;
+	 }
+	 
+	 /* if(flag == false){
+	 alert("취미를 1개이상 선택해주세요");
+	 return false; }*/
  
- 
+	 
+	 
  </script>
  </HEAD>
  <BODY>
@@ -60,7 +95,7 @@
  <nav><a href="./memberLogin.jsp" style = "text-decoration : none">로그인하기</a></nav> 
  <section>
 	<article>
-	<form name="frm" action = "./memberJoinAction.jsp" method="post">
+	<form name="frm" >
 		<table border = "1">
 			<tr><th class = "idcolor">아이디</th><td><input type="text" name="memberId" style = "width:100px" maxlength="30" placeholder = "아이디를 입력하세요"></td></tr>
 			<tr><th class = "idcolor">비밀번호</th><td><input type="password" name="memberPwd" style = "width:100px" maxlength="30"></td></tr>
