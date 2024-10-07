@@ -43,10 +43,13 @@
     out.println("<br>");
     
     
-    //String[] memberHobby = request.getParameterValues("memberHobby");
-    //for(int i = 0; i < memberHobby.length; i++){
-    //	out.println("memberHobby값은?"+memberHobby[i]);
-    //}
+    String[] memberHobby = request.getParameterValues("memberHobby");
+    String memberInHobby="";
+    for(int i = 0; i < memberHobby.length; i++){
+    	memberInHobby = memberInHobby + memberHobby[i]+",";
+    	
+    	out.println("memberHobby값은?"+memberHobby[i]);
+    }
     
     
     
@@ -67,11 +70,32 @@
     System.out.println("conn:"+conn);
     
     
+    //conn 객체안에는 많은 메소드가 있는데 일단 creatStatement 메소드를 사용해서 쿼리 작성
+    
+    String sql = "insert into member(memberid,memberpwd,membername,membergender,memberbirth,memberaddr,memberphone,membereamil,memberhobby) "
+    +"values('"+memberId+"','"+memberPwd+"','"+memberName+"','"+memberGender+"','"+memberBirth+"','"+memberAddr+"','"+memberPhone+"','"+memberEmail+"','"+memberInHobby+"')";
+    Statement stmt = conn.createStatement();  //쿼리구문을 동작시키는 클래스 Statement
+    int value = stmt.executeUpdate(sql);
     
     
     
     
-    %>    
+    
+    
+    // value가 0이면 미입력 1이면 입력됨
+    %>
+    <script>
+    
+    <%-- alert(<%=value%>); --%>
+    
+    
+    </script>
+    
+    
+    
+    
+    
+        
 <!DOCTYPE html>
 <html>
 <head>
