@@ -72,14 +72,27 @@
     
     //conn 객체안에는 많은 메소드가 있는데 일단 creatStatement 메소드를 사용해서 쿼리 작성
     
+    /* String sql = "insert into member(memberid,memberpwd,membername,membergender,memberbirth,memberaddr,memberphone,membereamil,memberhobby) "
+    +"values('"+memberId+"','"+memberPwd+"','"+memberName+"','"+memberGender+"','"+memberBirth+"','"+memberAddr+"','"+memberPhone+"','"+memberEmail+"','"+memberInHobby+"')"; */
+    /* Statement stmt = conn.createStatement(); */  //쿼리구문을 동작시키는 클래스 Statement
+    /* int value = stmt.executeUpdate(sql); */
+    
     String sql = "insert into member(memberid,memberpwd,membername,membergender,memberbirth,memberaddr,memberphone,membereamil,memberhobby) "
-    +"values('"+memberId+"','"+memberPwd+"','"+memberName+"','"+memberGender+"','"+memberBirth+"','"+memberAddr+"','"+memberPhone+"','"+memberEmail+"','"+memberInHobby+"')";
-    Statement stmt = conn.createStatement();  //쿼리구문을 동작시키는 클래스 Statement
-    int value = stmt.executeUpdate(sql);
+    +"values(?,?,?,?,?,?,?,?,?)";
     
+    PreparedStatement pstmt = conn.prepareStatement(sql);
     
+     pstmt.setString(1,memberId);
+     pstmt.setString(2,memberPwd);
+     pstmt.setString(3,memberName);
+     pstmt.setString(4,memberGender);
+     pstmt.setString(5,memberBirth);
+     pstmt.setString(6,memberAddr);
+     pstmt.setString(7,memberPhone);
+     pstmt.setString(8,memberEmail);
+     pstmt.setString(9,memberInHobby);
     
-    
+     int value = pstmt.executeUpdate();
     
     
     // value가 0이면 미입력 1이면 입력됨
