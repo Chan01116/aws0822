@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     
     <%@ page import = "java.sql.*" %>
+    <%@ include file = "/common/dbconn.jsp" %>
+    <%@ include file = "/common/function.jsp" %>
     <%-- <%page import="java.sql.Connection" %>
     <%page import="java.sql.DriverManager" %> --%> 
     
@@ -58,16 +60,7 @@
     // 3. spring 프레임워크로 프로그래밍 하는 방법
     
     
-    Connection conn = null;
-    String url = "jdbc:mysql://127.0.0.1/aws0822?serverTimezone=UTC";
-    String user = "root";
-    String password = "1234";
-    
-    
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    conn = DriverManager.getConnection(url, user, password);
-    
-    System.out.println("conn:"+conn);
+   
     
     
     //conn 객체안에는 많은 메소드가 있는데 일단 creatStatement 메소드를 사용해서 쿼리 작성
@@ -77,28 +70,35 @@
     /* Statement stmt = conn.createStatement(); */  //쿼리구문을 동작시키는 클래스 Statement
     /* int value = stmt.executeUpdate(sql); */
     
-    String sql = "insert into member(memberid,memberpwd,membername,membergender,memberbirth,memberaddr,memberphone,membereamil,memberhobby) "
-    +"values(?,?,?,?,?,?,?,?,?)";
+       
+     
+    // PreparedStatement 클래스는 메소드화 시켜서 사용함
+    // 매개변수에 인자값 대입해서 함수호출
     
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    
-     pstmt.setString(1,memberId);
-     pstmt.setString(2,memberPwd);
-     pstmt.setString(3,memberName);
-     pstmt.setString(4,memberGender);
-     pstmt.setString(5,memberBirth);
-     pstmt.setString(6,memberAddr);
-     pstmt.setString(7,memberPhone);
-     pstmt.setString(8,memberEmail);
-     pstmt.setString(9,memberInHobby);
-    
-     int value = pstmt.executeUpdate();
-    
-    
+    int value = memberInsert(conn,memberId,memberPwd,memberName,memberGender,memberBirth,memberAddr,memberPhone,memberEmail,memberInHobby);
+     //value 값이 1이면 0이면 입력실패
+     //1이면 성공했기 때문에 다른페이로 이동시키고 0이면 다시 회원가입 입력페이지로 간다
+     
+     String pageUrl = "";
+     if(value==1){ //-> index .jsp파일은 web.xml웹설정파일에 기본등록되어있어서 생략가능
+    	pageUrl = request.getContextPath()+"/";   // request.getContextPath() : 프로젝트이름
+    //	 response.sendRedirect(pageUrl);   // 전송방식 : sendRedirect는 요청받으면 다시 그쪽으로가라고 지시하는 방법
+     
+     }else{
+    	 pageUrl = request.getContextPath()+"/member/memberJoin.jsp";
+    //	 response.sendRedirect(pageUrl);
+     }
+     
+     
+     
+     
+     
     // value가 0이면 미입력 1이면 입력됨
     %>
     <script>
     
+    //자바스크립트로 페이지 이동시킨다 document객체안에 location 객체안에 주소속성에 담아서
+    document.location.href="<%=pageUrl%>";
     <%-- alert(<%=value%>); --%>
     
     
@@ -108,14 +108,3 @@
     
     
     
-        
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
