@@ -1,11 +1,11 @@
 package Vo;
 
-public class MemberVo {
+public class MemberVo {  //vo : Value Object 값을 담는 객체다 또는 DTO라고도 한다
 
 	
-	private int midx;
-	private String memberid;
-	private String memberpwd;
+	private int midx;                    //DB 테이블에 있는 컬럼이름과 동일하게 작성한다
+	private String memberid;             //바인딩 기술을 사용하기 위해 html input name명과 동일하게 맞춘다
+	private String memberpwd;            
 	private String membername;
 	private String membergender;
 	private String memberbirth;
